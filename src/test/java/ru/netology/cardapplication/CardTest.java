@@ -1,5 +1,6 @@
 package ru.netology.cardapplication;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,6 @@ class CardTest {
     @BeforeAll
     static void setUpAll() {
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
-
     }
 
     @BeforeEach
@@ -24,7 +24,6 @@ class CardTest {
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
-
 
     @Test
     void shouldRunSuccessfullyWithAllData() {
@@ -43,6 +42,7 @@ class CardTest {
         driver.quit();
         driver = null;
     }
+
 
 
 }
